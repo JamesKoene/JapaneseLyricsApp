@@ -10,8 +10,11 @@ export function ApiProvider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const apiBase = import.meta.env.PROD
+          ? "https://justj.app.n8n.cloud"
+          : "/api";
         const res = await fetch(
-          "/api/webhook/2e6d7e72-84b4-494b-991e-b9fd58d40ad2"
+          `${apiBase}/webhook/2e6d7e72-84b4-494b-991e-b9fd58d40ad2`
         );
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const songs = await res.json();

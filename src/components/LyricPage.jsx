@@ -16,7 +16,7 @@ export function LyricPage() {
         heroimage={song.thumbnails[0].url}
       />
       <main className="container mx-auto p-5">
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           <Aside
             albumimage={song.hits[0].result.header_image_thumbnail_url}
             artist={song.artist.name}
@@ -68,7 +68,7 @@ function Hero({ artist, song, heroimage }) {
 
 function Aside({ albumimage, artist, fulltitle, videourl, releasedate }) {
   return (
-    <aside className="w-full lg:w-1/4 md:w-1/3">
+    <aside className="w-full lg:w-1/4">
       <div className="sticky top-8">
         {/* Song Details */}
         <section className="mb-4">
@@ -106,16 +106,16 @@ function Aside({ albumimage, artist, fulltitle, videourl, releasedate }) {
 
 function RightContent({ title, english, japanese }) {
   return (
-    <div className="w-full lg:w-9/12 md:w-8/12">
+    <div className="w-full lg:w-9/12">
       <section>
         <h2 className="mt-1 mb-4 text-2xl font-semibold">
           {title.split(".")[1].split("-")[0]}
         </h2>
         <p className="text-lg leading-relaxed text-gray-700">
-          Blood Circulator (ブラッドサーキュレーター, Buraddo Sākyurētā),
-          performed by Asian Kung-Fu Generation, is the nineteenth opening for
-          the Naruto: Shippūden anime. It began on episode 459 and ended on
-          episode 479. It was replaced by Empty Heart.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias non
+          veniam cumque nemo natus ipsa repudiandae asperiores harum sequi,
+          quasi nostrum fugiat est nesciunt iusto neque rerum consequuntur.
+          Quam, voluptatibus.
         </p>
         {/* Kanji Analysis Section */}
         <h2 className="my-6 text-xl font-semibold">Kanji Analysis</h2>
@@ -143,8 +143,8 @@ function LyricsTable({ english, japanese }) {
   return (
     <div className="w-full">
       {/* Lyrics Table */}
-      <div className="w-full overflow-hidden rounded-xl border border-gray-200">
-        <table className="table-auto w-full text-left">
+      <div className="w-full overflow-x-auto lg:overflow-hidden rounded-xl border border-gray-200">
+        <table className="table-auto w-full lg:w-full min-w-[600px] text-left">
           <thead className="bg-gray-400 text-white">
             <tr>
               <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider rounded-tl-lg">
